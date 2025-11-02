@@ -1,0 +1,27 @@
+{
+  "name": "Ubuntu 25.10 Development Environment",
+  "image": "invent-registry.kde.org/neon/docker-images/plasma:unstable", 
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "installOhMyZsh": true,
+      "upgradePackages": true
+    },
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/sshd:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      },
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.remote-explorer"
+      ]
+    }
+  },
+  "forwardPorts": [],
+  "postCreateCommand": "echo 'Welcome To KDE Neon 6.7 Beta' && uname -a",
+  "remoteUser": "mysticgiggle"
+}
